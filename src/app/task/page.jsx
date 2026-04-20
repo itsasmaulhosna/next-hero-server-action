@@ -1,3 +1,4 @@
+import { AddTask } from "@/components/AddTask";
 import TaskCard from "@/components/TaskCard";
 import { getTasks } from "@/lib/task";
 
@@ -7,9 +8,12 @@ const Taskpage = async() => {
     return (
         <div>
             <h2 className="text-3xl font-bold text-purple-500">Task:{task.length}</h2>
-            {
+            <AddTask></AddTask>
+            <div className='grid grid-cols-3 gap-5 pt-8'>
+                {
                 task.map(tas=><TaskCard key={tas.id} tas={tas}></TaskCard>)
             }
+            </div>
         </div>
     );
 };
