@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "title": "Design Landing Page",
+    "description": "Create a modern and responsive landing page UI in Figma",
+    "status": "pending",
+    "priority": "high",
+    "dueDate": "2026-04-22",
+    "assignedTo": "Asma",
+    "createdAt": "2026-04-18"
+  },
+  {
+    "id": 2,
+    "title": "Build React Components",
+    "description": "Develop reusable components for dashboard",
+    "status": "in-progress",
+    "priority": "medium",
+    "dueDate": "2026-04-25",
+    "assignedTo": "Rahim",
+    "createdAt": "2026-04-17"
+  },
+  {
+    "id": 3,
+    "title": "Fix API Integration",
+    "description": "Resolve fetch error and connect backend properly",
+    "status": "pending",
+    "priority": "high",
+    "dueDate": "2026-04-20",
+    "assignedTo": "Karim",
+    "createdAt": "2026-04-18"
+  },
+  {
+    "id": 4,
+    "title": "Write README",
+    "description": "Add proper documentation for the project",
+    "status": "completed",
+    "priority": "low",
+    "dueDate": "2026-04-19",
+    "assignedTo": "Asma",
+    "createdAt": "2026-04-16"
+  },
+  {
+    "id": 5,
+    "title": "Deploy to Vercel",
+    "description": "Deploy project and fix routing issues",
+    "status": "in-progress",
+    "priority": "high",
+    "dueDate": "2026-04-23",
+    "assignedTo": "Hasan",
+    "createdAt": "2026-04-18"
+  }
+]
