@@ -1,9 +1,11 @@
 "use client";
 
 import {Envelope} from "@gravity-ui/icons";
-import {Button, Input, Label, Modal, Surface, TextField} from "@heroui/react";
+import Script from "next/script";
 
-export function AddTask() {
+import {Button, Input, Label, Modal, Surface, TextField,ListBox, Select} from "@heroui/react";
+
+export function AddTask({creatATask}) {
   return (
     <Modal>
       <Button variant="secondary">Add a Task</Button>
@@ -23,36 +25,69 @@ export function AddTask() {
             </Modal.Header>
             <Modal.Body className="p-6">
               <Surface variant="default">
-                <form className="flex flex-col gap-4">
-                  <TextField className="w-full" name="name" type="text">
-                    <Label>Name</Label>
-                    <Input placeholder="Enter your name" />
+                <form action={creatATask} className="flex flex-col gap-4">
+                  <TextField className="w-full" name="title" type="text">
+                    <Label>title</Label>
+                    <Input placeholder="Enter your task title" />
                   </TextField>
-                  <TextField className="w-full" name="email" type="email">
-                    <Label>Email</Label>
-                    <Input placeholder="Enter your email" />
+                  <TextField className="w-full" name="description" type="text">
+                    <Label>description</Label>
+                    <Input placeholder="Enter your task description" />
                   </TextField>
-                  <TextField className="w-full" name="phone" type="tel">
-                    <Label>Phone</Label>
-                    <Input placeholder="Enter your phone number" />
-                  </TextField>
-                  <TextField className="w-full" name="company">
-                    <Label>Company</Label>
-                    <Input placeholder="Enter your company name" />
-                  </TextField>
+<Select className="w-[256px]" placeholder="Select one" variant="primary">
+        <Label>priority</Label>
+        <Select.Trigger>
+          <Select.Value />
+          <Select.Indicator />
+        </Select.Trigger>
+        <Select.Popover>
+          <ListBox>
+            <ListBox.Item id="low" textValue="low">
+              Low
+              <ListBox.ItemIndicator />
+            </ListBox.Item>
+            <ListBox.Item id="medium" textValue="medium">
+              Medium
+              <ListBox.ItemIndicator />
+            </ListBox.Item>
+          </ListBox>
+        </Select.Popover>
+      </Select>
+      <Select className="w-[256px]" placeholder="Select one" variant="secondary">
+        <Label>Status</Label>
+        <Select.Trigger>
+          <Select.Value />
+          <Select.Indicator />
+        </Select.Trigger>
+        <Select.Popover>
+          <ListBox>
+            <ListBox.Item id="pending" textValue="pending">
+              Pending
+              <ListBox.ItemIndicator />
+            </ListBox.Item>
+            <ListBox.Item id="inProgress" textValue="inProgress">
+              In Progress
+              <ListBox.ItemIndicator />
+            </ListBox.Item>
+          </ListBox>
+        </Select.Popover>
+      </Select>
+
+
                   <TextField className="w-full" name="message">
-                    <Label>Message</Label>
-                    <Input placeholder="Enter your message" />
+                    <Label>Assigen to</Label>
+                    <Input placeholder="Enter your task assigen" />
                   </TextField>
-                </form>
-              </Surface>
-            </Modal.Body>
-            <Modal.Footer>
+                  <Modal.Footer>
               <Button slot="close" variant="secondary">
                 Cancel
               </Button>
-              <Button slot="close">Send Message</Button>
+              <Button type="submit">Submit Task</Button>
             </Modal.Footer>
+                </form>
+              </Surface>
+            </Modal.Body>
+            
           </Modal.Dialog>
         </Modal.Container>
       </Modal.Backdrop>
